@@ -7,7 +7,7 @@
 - <input type="checkbox" checked="checked" disabled="disabled"> Установить PostgreSQL локально.
 - <input type="checkbox" checked="checked" disabled="disabled"> Создать новую базу данных для заказов.
 - <input type="checkbox" checked="checked" disabled="disabled"> Создать пользователя с доступом к базе данных.
-- [ ] Настроить доступ к PostgreSQL для приложения.
+- Настроить доступ к PostgreSQL для приложения.
 
 ## Шаг 2: Создание таблиц для хранения данных заказов
 
