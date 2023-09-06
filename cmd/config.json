@@ -1,0 +1,15 @@
+{
+  "NATS": {
+    "cluster_id": "test-cluster",
+    "client_id": "order-processing-app",
+    "URL": "nats://localhost:4222",
+    "Channel": "orders"
+  },
+  "Database": {
+    "URL": "postgres://postgres:root@localhost:5432/l0widlberies?sslmode=disable"
+  },
+  "Server": {
+    "Host": "localhost",
+    "Port": 8080
+  }
+}

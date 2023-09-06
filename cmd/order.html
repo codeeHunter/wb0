@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+<h1>Order Details</h1>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Order ID</td>
+        <td>{{ .OrderUID }}</td>
+    </tr>
+    <tr>
+        <td>Track Number</td>
+        <td>{{ .TrackNumber }}</td>
+    </tr>
+    <tr>
+        <td>Entry</td>
+        <td>{{ .Entry }}</td>
+    </tr>
+    <tr>
+        <td>Locale</td>
+        <td>{{ .Locale }}</td>
+    </tr>
+    <tr>
+        <td>Internal Signature</td>
+        <td>{{ .InternalSig }}</td>
+    </tr>
+    <tr>
+        <td>Customer ID</td>
+        <td>{{ .CustomerID }}</td>
+    </tr>
+    <tr>
+        <td>Delivery Service</td>
+        <td>{{ .DeliveryService }}</td>
+    </tr>
+    <tr>
+        <td>Shard Key</td>
+        <td>{{ .Shardkey }}</td>
+    </tr>
+    <tr>
+        <td>SMID</td>
+        <td>{{ .SMID }}</td>
+    </tr>
+    <tr>
+        <td>Date Created</td>
+        <td>{{ .DateCreated }}</td>
+    </tr>
+    <tr>
+        <td>Oof Shard</td>
+        <td>{{ .OofShard }}</td>
+    </tr>
+</table>
+<h2>Delivery Details</h2>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{ .Delivery.Name }}</td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td>{{ .Delivery.Phone }}</td>
+    </tr>
+    <tr>
+        <td>Zip</td>
+        <td>{{ .Delivery.Zip }}</td>
+    </tr>
+    <tr>
+        <td>City</td>
+        <td>{{ .Delivery.City }}</td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td>{{ .Delivery.Address }}</td>
+    </tr>
+    <tr>
+        <td>Region</td>
+        <td>{{ .Delivery.Region }}</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>{{ .Delivery.Email }}</td>
+    </tr>
+</table>
+<h2>Payment Details</h2>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Transaction</td>
+        <td>{{ .Payment.Transaction }}</td>
+    </tr>
+    <tr>
+        <td>Request ID</td>
+        <td>{{ .Payment.RequestID }}</td>
+    </tr>
+    <tr>
+        <td>Currency</td>
+        <td>{{ .Payment.Currency }}</td>
+    </tr>
+    <tr>
+        <td>Provider</td>
+        <td>{{ .Payment.Provider }}</td>
+    </tr>
+    <tr>
+        <td>Amount</td>
+        <td>{{ .Payment.Amount }}</td>
+    </tr>
+    <tr>
+        <td>Payment Date</td>
+        <td>{{ .Payment.PaymentDt }}</td>
+    </tr>
+    <tr>
+        <td>Bank</td>
+        <td>{{ .Payment.Bank }}</td>
+    </tr>
+    <tr>
+        <td>Delivery Cost</td>
+        <td>{{ .Payment.DeliveryCost }}</td>
+    </tr>
+    <tr>
+        <td>Goods Total</td>
+        <td>{{ .Payment.GoodsTotal }}</td>
+    </tr>
+    <tr>
+        <td>Custom Fee</td>
+        <td>{{ .Payment.CustomFee }}</td>
+    </tr>
+</table>
+<h2>Items</h2>
+<table>
+    <tr>
+        <th>Chrt ID</th>
+        <th>Track Number</th>
+        <th>Price</th>
+        <th>RID</th>
+        <th>Name</th>
+        <th>Sale</th>
+        <th>Size</th>
+        <th>Total Price</th>
+        <th>NMID</th>
+        <th>Brand</th>
+        <th>Status</th>
+    </tr>
+    {{range.Items}}
+    <tr>
+        <td>{{ .ChrtID }}</td>
+        <td>{{ .TrackNumber }}</td>
+        <td>{{ .Price }}</td>
+        <td>{{ .RID }}</td>
+        <td>{{ .Name }}</td>
+        <td>{{ .Sale }}</td>
+        <td>{{ .Size }}</td>
+        <td>{{ .TotalPrice }}</td>
+        <td>{{ .NMID }}</td>
+        <td>{{ .Brand }}</td>
+        <td>{{ .Status }}</td>
+    </tr>
+    {{end}}
+</table>
+</body>
+</html>
